@@ -1,0 +1,122 @@
+/* =========================================================
+   c1 · Maqueta de referencia
+   Header con Flexbox
+   ========================================================= */
+
+/* ---------- 1. Variables y base ---------- */
+:root {
+    --fondo: #f6f7f9;
+    --superficie: #ffffff;
+    --tinta: #111827;
+    --texto-suave: #6b7280;
+    --linea: #e5e7eb;
+    --acento: #2563eb;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background-color: var(--fondo);
+    color: var(--tinta);
+    line-height: 1.5;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* ---------- 2. Header con Flexbox ---------- */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between; /* logo a la izquierda, nav a la derecha */
+    align-items: center;            /* centrado vertical */
+    gap: 24px;
+    padding: 16px clamp(20px, 4vw, 48px);
+    background-color: var(--superficie);
+    border-bottom: 1px solid var(--linea);
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--tinta);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--acento);
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+}
+
+.site-nav a {
+    color: var(--texto-suave);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.site-nav a:hover {
+    color: var(--tinta);
+}
+
+.site-nav a.is-active {
+    color: var(--acento);
+    font-weight: 600;
+}
+
+/* ---------- 3. Cabecera de la página ---------- */
+.page {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 40px 24px 72px;
+}
+
+.page-head {
+    margin-bottom: 28px;
+}
+
+.eyebrow {
+    margin: 0 0 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--acento);
+}
+
+.page-head h1 {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+}
+
+.lead {
+    margin: 8px 0 0;
+    color: var(--texto-suave);
+    font-size: 0.95rem;
+}
+
+/* ---------- 4. Pie ---------- */
+.site-footer {
+    padding: 24px;
+    background-color: var(--superficie);
+    border-top: 1px solid var(--linea);
+    text-align: center;
+}
+
+.site-footer p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--texto-suave);
+}

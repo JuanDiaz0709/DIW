@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de ejemplo · c3 · Página completa con Grid</title>
+    <link rel="stylesheet" href="c3.css">
+</head>
+<body>
+
+    <!-- Contenedor Grid: cabecera / lateral / contenido / pie -->
+    <div class="layout-grid">
+
+        <header class="site-header">
+            <a class="logo" href="#">Tienda<span>.</span></a>
+
+            <nav class="site-nav" aria-label="Navegación principal">
+                <a href="#" class="is-active">Inicio</a>
+                <a href="#">Productos</a>
+                <a href="#">Ofertas</a>
+                <a href="#">Contacto</a>
+            </nav>
+        </header>
+
+        <aside class="sidebar" aria-label="Categorías y filtros">
+            <h2 class="sidebar-title">Categorías</h2>
+            <ul class="sidebar-list">
+                <li><a href="#" class="is-active">Todos los productos</a></li>
+                <li><a href="#">Novedades</a></li>
+                <li><a href="#">Ofertas</a></li>
+                <li><a href="#">Accesorios</a></li>
+            </ul>
+
+            <h2 class="sidebar-title">Filtros</h2>
+            <ul class="sidebar-list sidebar-list--simple">
+                <li>Menos de 20 €</li>
+                <li>Entre 20 € y 50 €</li>
+                <li>Más de 50 €</li>
+            </ul>
+        </aside>
+
+        <main class="content">
+
+            <header class="page-head">
+                <p class="eyebrow">Catálogo</p>
+                <h1>Productos</h1>
+                <p class="lead">Doce tarjetas de ejemplo dentro de un Grid con barra lateral de 250 px.</p>
+            </header>
+
+            <section class="products" aria-label="Listado de productos">
+
+                <article class="card">
+                    <div class="card-media" aria-hidden="true"><span>01</span></div>
+                    <div class="card-body">
+                        <h2>Producto 01</h2>
+                        <p>Descripción breve del producto de ejemplo.</p>
+                        <div class="card-foot">
+                            <span class="price">19,99 €</span>
+                            <button class="btn" type="button">Añadir</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-media" aria-hidden="true"><span>02</span></div>
+                    <div class="card-body">
+                        <h2>Producto 02</h2>
+                        <p>Descripción breve del producto de ejemplo.</p>
+                        <div class="card-foot">
+                            <span class="price">24,50 €</span>
+                            <button class="btn" type="button">Añadir</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-media" aria-hidden="true"><span>03</span></div>
+                    <div class="card-body">
+                        <h2>Producto 03</h2>
+                        <p>Descripción breve del producto de ejemplo.</p>
+                        <div class="card-foot">
+                            <span class="price">12,00 €</span>
+                            <button class="btn" type="button">Añadir</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-media" aria-hidden="true"><span>04</span></div>
+                    <div class="card-body">
+                        <h2>Producto 04</h2>
+                        <p>Descripción breve del producto de ejemplo.</p>
+                        <div class="card-foot">
+                            <span class="price">34,90 €</span>
+                            <button class="btn" type="button">Añadir</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-media" aria-hidden="true"><span>05</span></div>
+                    <div class="card-body">
+                        <h2>Producto 05</h2>
+                        <p>Descripción breve del producto de ejemplo.</p>
+                        <div class="card-foot">
+                            <span class="price">9,99 €</span>
+                            <button class="btn" type="button">Añadir</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-media" aria-hidden="true"><span>06</span></div>
+                    <div class="card-body">
+                        <h2>Producto 06</h2>
+                        <p>Descripción breve del producto de ejemplo.</p>
+                        <div class="card-foot">
+                            <span class="price">49,00 €</span>
+                            <button class="btn" type="button">Añadir</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-media" aria-hidden="true"><span>07</span></div>
+                    <div class="card-body">
+                        <h2>Producto 07</h2>
+                        <p>Descripción breve del producto de ejemplo.</p>
+                        <div class="card-foot">
+                            <span class="price">15,75 €</span>
+                            <button class="btn" type="button">Añadir</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-media" aria-hidden="true"><span>08</span></div>
+                    <div class="card-body">
+                        <h2>Producto 08</h2>
+                        <p>Descripción breve del producto de ejemplo.</p>
+                        <div class="card-foot">
+                            <span class="price">22,30 €</span>
+                            <button class="btn" type="button">Añadir</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-media" aria-hidden="true"><span>09</span></div>
+                    <div class="card-body">
+                        <h2>Producto 09</h2>
+                        <p>Descripción breve del producto de ejemplo.</p>
+                        <div class="card-foot">
+                            <span class="price">64,00 €</span>
+                            <button class="btn" type="button">Añadir</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-media" aria-hidden="true"><span>10</span></div>
+                    <div class="card-body">
+                        <h2>Producto 10</h2>
+                        <p>Descripción breve del producto de ejemplo.</p>
+                        <div class="card-foot">
+                            <span class="price">8,50 €</span>
+                            <button class="btn" type="button">Añadir</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-media" aria-hidden="true"><span>11</span></div>
+                    <div class="card-body">
+                        <h2>Producto 11</h2>
+                        <p>Descripción breve del producto de ejemplo.</p>
+                        <div class="card-foot">
+                            <span class="price">27,40 €</span>
+                            <button class="btn" type="button">Añadir</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-media" aria-hidden="true"><span>12</span></div>
+                    <div class="card-body">
+                        <h2>Producto 12</h2>
+                        <p>Descripción breve del producto de ejemplo.</p>
+                        <div class="card-foot">
+                            <span class="price">39,99 €</span>
+                            <button class="btn" type="button">Añadir</button>
+                        </div>
+                    </div>
+                </article>
+
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>© 2026 Tienda de ejemplo · Ejercicio c3 — Página completa con Grid</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
