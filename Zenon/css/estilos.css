@@ -1,0 +1,615 @@
+/* ==========================================================================
+   PROYECTO UT2: DISEÑO DE INTERFACES WEB - Zenon (Counter-Strike)
+   Paleta: #333333 (Fondo), #48E5C2 (Primario), #C1D1D2 (Texto),
+           #87E708 (Acento 1), #FFC642 (Acento 2)
+   Tipografías: Spectral (Títulos), JetBrains Mono (Textos/Métricas)
+   ========================================================================== */
+
+/* 1. Box-sizing global */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2. Reglas generales y variables de estilo */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding-top: 85px; /* Compensación indispensable por el header fixed */
+    background-color: #333333;
+    color: #C1D1D2;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Títulos con Spectral */
+h1, h2, h3, h4 {
+    font-family: 'Spectral', serif;
+    font-weight: 700;
+    margin-top: 0;
+    color: #ffffff;
+}
+
+/* 3. Posicionamiento: Header fijo (position: fixed) */
+header.header-principal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 85px;
+    background-color: #242424;
+    border-bottom: 2px solid #48E5C2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    z-index: 1000;
+}
+
+/* El header usa el mismo ancho útil que el contenido: se centra con márgenes automáticos
+   aplicando el padding a cada lado mediante un contenedor lógico de ancho variable */
+/* Marca Zenon */
+a.marca-enlace {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+img.icono-marca {
+    width: 26px;
+    height: 26px;
+    display: block;
+    flex: none;
+}
+
+h1.marca-titulo {
+    font-size: 28px;
+    letter-spacing: 1px;
+    margin: 0;
+    color: #ffffff;
+}
+
+h1.marca-titulo span {
+    color: #48E5C2;
+}
+
+/* Navegación y selector descendiente */
+nav.navegacion-principal ul.lista-navegacion {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+}
+
+/* Pseudo-clase :hover y clase combinada con tipo */
+a.enlace-navegacion {
+    color: #C1D1D2;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+a.enlace-navegacion:hover {
+    color: #333333;
+    background-color: #48E5C2;
+}
+
+a.enlace-activo {
+    color: #48E5C2;
+    border-bottom: 2px solid #48E5C2;
+}
+
+/* Barra de usuario con avatar circular a la izquierda del nombre */
+section.barra-usuario {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: #C1D1D2;
+}
+
+span.icono-notificacion {
+    cursor: pointer;
+    font-size: 18px;
+    margin-right: 4px;
+}
+
+figure.figura-avatar {
+    margin: 0;
+    padding: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #48E5C2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1e1e1e;
+}
+
+img.avatar-circular {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+span.nombre-usuario {
+    font-weight: 700;
+    color: #FFC642;
+}
+
+/* 4. Contenedor Principal */
+main.contenedor-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px 60px 20px;
+}
+
+/* Subtítulos de sección */
+h2.subtitulo-seccion {
+    font-size: 28px;
+    color: #48E5C2;
+    margin-bottom: 6px;
+}
+
+p.texto-descripcion {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #C1D1D2;
+    font-size: 14px;
+}
+
+/* 5. Sección Hero */
+section.seccion-hero {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+article.hero-busqueda {
+    flex: 2 1 500px;
+    background-color: #2b2b2b;
+    border-left: 4px solid #48E5C2;
+    padding: 28px;
+    border-radius: 6px;
+}
+
+article.hero-estado {
+    flex: 1 1 300px;
+    background-color: #2b2b2b;
+    border-left: 4px solid #FFC642;
+    padding: 28px;
+    border-radius: 6px;
+}
+
+/* Formulario */
+label.etiqueta-formulario {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+input.campo-texto {
+    width: 100%;
+    max-width: 480px;
+    padding: 12px 14px;
+    margin-bottom: 15px;
+    background-color: #1e1e1e;
+    border: 1px solid #555555;
+    border-radius: 4px;
+    color: #ffffff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    display: block;
+}
+
+input.campo-texto:focus {
+    outline: none;
+    border-color: #48E5C2;
+}
+
+button.boton-primario {
+    background-color: #48E5C2;
+    color: #242424;
+    border: none;
+    padding: 12px 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button.boton-primario:hover {
+    background-color: #87E708;
+    color: #1a1a1a;
+}
+
+/* Estado y Barra de Progreso */
+p.texto-estado {
+    font-size: 14px;
+    color: #FFC642;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+div.barra-progreso {
+    width: 100%;
+    height: 16px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+span.barra-relleno {
+    display: block;
+    width: 85%;
+    height: 100%;
+    background-color: #87E708;
+}
+
+p.nota-estado {
+    font-size: 12px;
+    color: #C1D1D2;
+    margin: 0;
+}
+
+/* 6. Sección Resumen y Rejilla de Tarjetas */
+section.seccion-resumen {
+    margin-bottom: 40px;
+}
+
+div.rejilla-tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+article.tarjeta-dato {
+    flex: 1 1 320px;
+    background-color: #2b2b2b;
+    border: 1px solid #444444;
+    border-radius: 6px;
+    padding: 22px;
+}
+
+h3.titulo-tarjeta {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #444444;
+    padding-bottom: 8px;
+}
+
+/* Lista de métricas */
+dl.lista-metricas {
+    margin: 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px 16px;
+}
+
+dt.termino-metrica {
+    font-weight: 600;
+    color: #C1D1D2;
+}
+
+dd.valor-metrica {
+    margin: 0;
+    color: #48E5C2;
+    font-weight: 700;
+    text-align: right;
+}
+
+/* Contenedor multimedia */
+figure.contenedor-multimedia {
+    margin: 0;
+}
+
+div.marcador-posicion-video {
+    width: 100%;
+    height: 140px;
+    background-color: #1e1e1e;
+    border: 1px dashed #666666;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+span.texto-posicion {
+    font-size: 12px;
+    color: #888888;
+}
+
+figcaption.pie-multimedia {
+    font-size: 13px;
+    color: #C1D1D2;
+}
+
+figcaption.pie-multimedia strong {
+    color: #FFC642;
+}
+
+/* 7. Sección de Consejos */
+section.seccion-consejos {
+    margin-bottom: 40px;
+}
+
+article.articulo-consejos {
+    background-color: #2b2b2b;
+    border-radius: 6px;
+    padding: 24px;
+    border-left: 4px solid #87E708;
+}
+
+ol.lista-consejos {
+    margin: 0;
+    padding-left: 20px;
+}
+
+li.item-consejo {
+    margin-bottom: 14px;
+    line-height: 1.6;
+}
+
+li.item-consejo strong {
+    color: #87E708;
+}
+
+/* 8. Footer Semántico */
+footer.footer-principal {
+    background-color: #242424;
+    border-top: 1px solid #444444;
+    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+section.footer-columna {
+    flex: 1 1 250px;
+    max-width: 320px;
+}
+
+/* Las columnas de navegación y redes pueden ser algo más anchas */
+h4.footer-subtitulo {
+    font-size: 18px;
+    color: #48E5C2;
+    margin-bottom: 12px;
+}
+
+p.footer-texto {
+    font-size: 13px;
+    color: #C1D1D2;
+    margin: 0;
+}
+
+p.estado-operativo {
+    color: #87E708;
+    font-weight: 600;
+}
+
+ul.footer-enlaces {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.footer-enlaces li {
+    margin-bottom: 6px;
+}
+
+a.footer-link {
+    color: #C1D1D2;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s ease;
+}
+
+a.footer-link:hover {
+    color: #48E5C2;
+}
+
+/* ==========================================================================
+   9. RECURSOS AÑADIDOS: precarga, logotipo, fotografía del hero y redes
+   ========================================================================== */
+
+/* Utility: oculto visualmente pero accesible para lectores de pantalla */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* 9.1 Pantalla de precarga con icono animado */
+div.precarga {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background-color: #1e1e1e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease;
+}
+
+div.precarga.precarga-oculta {
+    opacity: 0;
+    pointer-events: none;
+}
+
+div.precarga-contenido {
+    text-align: center;
+}
+
+img.icono-precarga {
+    width: 96px;
+    height: 96px;
+    display: block;
+    margin: 0 auto 18px;
+}
+
+p.texto-precarga {
+    color: #48E5C2;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+}
+
+div.barra-precarga {
+    width: 220px;
+    height: 6px;
+    background-color: #333333;
+    border-radius: 3px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+span.barra-precarga-relleno {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #87E708;
+    transform-origin: left center;
+    animation: cargar-barra 2s linear forwards;
+}
+
+@keyframes cargar-barra {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+}
+
+/* 9.2 Logotipo en el header a distintos tamaños */
+img.logo-header {
+    display: block;
+    width: 220px;
+    max-width: 100%;
+    height: auto;
+    transition: width 0.2s ease;
+}
+
+@media (max-width: 900px) {
+    img.logo-header { width: 160px; }
+    header.header-principal { padding: 0 20px; }
+    span.nombre-usuario { display: none; }
+}
+
+@media (max-width: 600px) {
+    img.logo-header { width: 110px; }
+    nav.navegacion-principal ul.lista-navegacion { gap: 8px; }
+    a.enlace-navegacion { font-size: 12px; padding: 6px 8px; }
+}
+
+/* 9.3 Fotografía del hero */
+figure.hero-fotografia {
+    position: relative;
+    margin: 0 0 24px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #444444;
+}
+
+img.imagen-hero {
+    display: block;
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    object-position: center 45%;
+}
+
+figcaption.pie-hero {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 16px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: #ffffff;
+    font-size: 12px;
+}
+
+@media (max-width: 600px) {
+    img.imagen-hero { height: 200px; }
+}
+
+/* 9.4 Iconos de redes sociales del footer */
+section.footer-redes {
+    max-width: none;
+}
+
+ul.lista-redes {
+    list-style: none;
+    display: flex;
+    gap: 12px;
+    margin: 0 0 12px;
+    padding: 0;
+}
+
+ul.lista-redes li {
+    margin: 0;
+}
+
+img.icono-red {
+    width: 34px;
+    height: 34px;
+    display: block;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+ul.lista-redes a:hover img.icono-red {
+    transform: translateY(-3px) scale(1.08);
+    filter: drop-shadow(0 0 6px #48E5C2);
+}
+
+article.articulo-ayuda {
+    background-color: #2b2b2b;
+    border-radius: 6px;
+    padding: 24px;
+    border-left: 4px solid #FFC642;
+}
+
+ol.lista-ayuda {
+    margin: 0 0 14px;
+    padding-left: 22px;
+}
+
+ol.lista-ayuda li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+ol.lista-ayuda strong {
+    color: #48E5C2;
+}
+
+p.nota-ayuda {
+    margin: 0;
+    font-size: 13px;
+    color: #C1D1D2;
+    font-style: italic;
+}
